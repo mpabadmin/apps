@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>1040 medkuopos programėlės</title>
-<meta name="description" content="LŠS Vilniaus 1040 medicinos šaulių kuopos programėlės: March, PCC, ETC ir SIM – kur jas rasti ir kaip įsidiegti telefone ar kompiuteryje.">
+<meta name="description" content="LŠS Vilniaus 1040 medicinos šaulių kuopos programėlės: SIM, ETC, March ir PCC – kur jas rasti ir kaip įsidiegti telefone ar kompiuteryje.">
 <meta name="theme-color" content="#1A1C16">
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -97,6 +97,13 @@ kbd{font:600 14px Barlow;padding:1px 7px;border:1px solid var(--line);border-bot
 .after p{margin:6px 0 0;color:var(--tx2);font-size:16px}
 @media (max-width:760px){.after{grid-template-columns:1fr}}
 
+.pulse{margin-top:20px;padding:16px 18px;border-radius:var(--r);background:color-mix(in srgb,var(--sim) 18%,var(--bg2));border-left:5px solid var(--sim);max-width:52ch}
+.pulse b{font:700 24px/1.1 'Barlow Condensed'}
+.pulse p{margin:6px 0 0;max-width:none}
+.pulse a{color:var(--redtx);font-weight:600}
+.pulse > a{display:inline-block;margin-top:10px}
+.pulse .key{margin-top:10px;padding-top:10px;border-top:1px solid color-mix(in srgb,var(--sim) 40%,transparent)}
+.pulse .key b{font:600 17px Barlow}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--tx2);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 </style>
@@ -110,13 +117,66 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
 <main>
 <section class="wrap hero">
   <h1>Kuopos programėlės</h1>
-  <p class="lead">Trys programėlės pagalbai sužeistajam – nuo pirmosios pagalbos lauke iki Role 1 punkto – ir viena treniruotėms. Veikia telefone be interneto, įdiegti galima tiesiai iš naršyklės.</p>
+  <p class="lead">Paciento monitoriaus simuliatorius treniruotėms ir trys gidai pagalbai sužeistajam: Role 1 punkte, lauke ir ilgalaikės priežiūros metu. Veikia telefone be interneto, įdiegti galima tiesiai iš naršyklės.</p>
   <nav class="kit" aria-label="Programėlės">
+    <a href="#sim" style="--c:var(--sim)"><img src="img/sim-icon.png" alt="" width="64" height="64"><b>SIM</b><span>Paciento monitoriaus simuliatorius su Pulse Physiology Engine</span><small>Instruktoriams ir treniruotėms</small></a>
+    <a href="#etc" style="--c:var(--etc)"><img src="img/etc-icon.png" alt="" width="64" height="64"><b>ETC</b><span>Traumos komanda Role 1 punkte</span><small>Gydytojams, slaugytojams, paramedikams</small></a>
     <a href="#march" style="--c:var(--march)"><img src="img/march-icon.png" alt="" width="64" height="64"><b>March</b><span>Pagalba lauke pagal MARCH PAWS</span><small>Šauliams gelbėtojams, kovos medikams</small></a>
     <a href="#pcc" style="--c:var(--pcc)"><img src="img/pcc-icon.png" alt="" width="64" height="64"><b>PCC</b><span>Ilgalaikė sužeistojo priežiūra lauke</span><small>Kai evakuacija vėluoja valandas</small></a>
-    <a href="#etc" style="--c:var(--etc)"><img src="img/etc-icon.png" alt="" width="64" height="64"><b>ETC</b><span>Traumos komanda Role 1 punkte</span><small>Gydytojams, slaugytojams, paramedikams</small></a>
-    <a href="#sim" style="--c:var(--sim)"><img src="img/sim-icon.png" alt="" width="64" height="64"><b>SIM</b><span>Paciento monitoriaus simuliatorius</span><small>Instruktoriams ir treniruotėms</small></a>
   </nav>
+</section>
+
+<section class="app" id="sim" data-a="sim" style="--c:var(--sim)">
+  <div class="wrap hd">
+    <div>
+      <div class="who"><img src="img/sim-icon.png" alt="" width="56" height="56"><h2>SIM</h2></div>
+      <span class="role">Treniruotėms</span>
+      <p>Paciento monitoriaus simuliatorius. Vienas telefonas tampa monitoriumi su EKG, SpO₂, AKS ir aliarmais, kitas – instruktoriaus pultu. Būklė keičiasi pagal tai, ką komanda daro: procedūras, vaistus, skysčius ir kraują.</p>
+      <div class="pulse">
+        <b>Pulse Physiology Engine</b>
+        <p>Mūsų serveryje veikia <a href="https://pulse.kitware.com/" target="_blank" rel="noopener">Pulse Physiology Engine</a> – atvirojo kodo žmogaus fiziologijos modelis (Kitware). Jis skaičiuoja paciento gyvybinius rodiklius: kraujo netekimą, pneumotoraksą, kvėpavimo takų obstrukciją, vaistų, skysčių ir kraujo poveikį. Be interneto SIM veikia su supaprastintu telefono modeliu.</p>
+        <p class="key">Pulse serveriui reikalingas raktas (žetonas) – dėl jo kreipkitės į <b>Moebius</b>.</p>
+        <a href="https://pulse.kitware.com/" target="_blank" rel="noopener">Apie Pulse Physiology Engine</a>
+      </div>
+      <ul>
+        <li>Scenarijai MEDEVAC ir Role 1, perdavimas iš vieno į kitą</li>
+        <li>Sužalojimai ir pagalba iki atvykimo – pagal CLS ir CMC ribas</li>
+        <li>Instruktoriaus įvykiai: atsilaisvinęs turniketas, nukritęs elektrodas, širdies sustojimas</li>
+      </ul>
+      <a class="open" href="https://sim.1040medkuopa.lt">Atidaryti SIM <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      <span class="dom">sim.1040medkuopa.lt</span>
+    </div>
+    <div class="shots">
+      <figure><img src="img/sim-0.webp" alt="SIM pradžia: monitorius arba instruktorius" loading="lazy" width="540" height="1169"><figcaption>Telefonas – monitorius arba pultas</figcaption></figure>
+      <figure><img src="img/sim-1.webp" alt="Instruktoriaus vedlys: kas atlikta iki atvykimo" loading="lazy" width="540" height="1169"><figcaption>Vedlys: kas atlikta iki atvykimo</figcaption></figure>
+      <figure><img src="img/sim-2.webp" alt="Instruktoriaus pultas: procedūros pagal traumas" loading="lazy" width="540" height="1169"><figcaption>Pultas: procedūros pagal traumas</figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap">
+    <figure class="mon"><img src="img/sim-mon.webp" alt="Monitoriaus vaizdas: EKG, pletizmograma, kvėpavimas, ŠSD 107, SpO₂ 78, AKS 84/56" loading="lazy" width="1200" height="555"><figcaption>Monitorius gulsčiame telefone: sužeistasis su turniketu ir atviru pneumotoraksu</figcaption></figure>
+  </div>
+</section>
+
+<section class="app" id="etc" data-a="etc" style="--c:var(--etc)">
+  <div class="wrap hd">
+    <div>
+      <div class="who"><img src="img/etc-icon.png" alt="" width="56" height="56"><h2>ETC gidas</h2></div>
+      <span class="role">Role 1 · traumos komanda</span>
+      <p>Traumos komandos gidas Role 1 punktui pagal European Trauma Course. Kiekvienas komandos narys mato savo užduotis: A – kvėpavimo takai ir vadovavimas, B – kvėpavimas, C – kraujotaka.</p>
+      <ul>
+        <li>Eskalavimo planai: masyvus kraujavimas, kvėpavimo takų obstrukcija, trauminis sustojimas</li>
+        <li>Pirminė ir antrinė apžiūra, gydymo tikslai</li>
+        <li>Vaistai, transfuzija, nudegimai, GKS, 10 s triažas, MASCAL</li>
+      </ul>
+      <a class="open" href="https://etc.1040medkuopa.lt">Atidaryti ETC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+      <span class="dom">etc.1040medkuopa.lt</span>
+    </div>
+    <div class="shots">
+      <figure><img src="img/etc-0.webp" alt="ETC gido pradžia: eskalavimo planai ir komandos vaidmenys A, B, C" loading="lazy" width="540" height="1169"><figcaption>Eskalavimo planai ir vaidmenys</figcaption></figure>
+      <figure><img src="img/etc-1.webp" alt="A komandos nario pirminės apžiūros sąrašas" loading="lazy" width="540" height="1169"><figcaption>A narys: pirminė apžiūra</figcaption></figure>
+      <figure><img src="img/etc-2.webp" alt="Masyvaus kraujavimo eskalavimo planas" loading="lazy" width="540" height="1169"><figcaption>Masyvaus kraujavimo planas</figcaption></figure>
+    </div>
+  </div>
 </section>
 
 <section class="app" id="march" data-a="march" style="--c:var(--march)">
@@ -160,53 +220,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <figure><img src="img/pcc-1.webp" alt="Sužeistojo rodiklių matavimai ir grafikas" loading="lazy" width="540" height="1169"><figcaption>Rodiklių stebėjimas</figcaption></figure>
       <figure><img src="img/pcc-2.webp" alt="Valandinės priežiūros kontrolinis sąrašas" loading="lazy" width="540" height="1169"><figcaption>Valandinė priežiūra</figcaption></figure>
     </div>
-  </div>
-</section>
-
-<section class="app" id="etc" data-a="etc" style="--c:var(--etc)">
-  <div class="wrap hd">
-    <div>
-      <div class="who"><img src="img/etc-icon.png" alt="" width="56" height="56"><h2>ETC gidas</h2></div>
-      <span class="role">Role 1 · traumos komanda</span>
-      <p>Traumos komandos gidas Role 1 punktui pagal European Trauma Course. Kiekvienas komandos narys mato savo užduotis: A – kvėpavimo takai ir vadovavimas, B – kvėpavimas, C – kraujotaka.</p>
-      <ul>
-        <li>Eskalavimo planai: masyvus kraujavimas, kvėpavimo takų obstrukcija, trauminis sustojimas</li>
-        <li>Pirminė ir antrinė apžiūra, gydymo tikslai</li>
-        <li>Vaistai, transfuzija, nudegimai, GKS, 10 s triažas, MASCAL</li>
-      </ul>
-      <a class="open" href="https://etc.1040medkuopa.lt">Atidaryti ETC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-      <span class="dom">etc.1040medkuopa.lt</span>
-    </div>
-    <div class="shots">
-      <figure><img src="img/etc-0.webp" alt="ETC gido pradžia: eskalavimo planai ir komandos vaidmenys A, B, C" loading="lazy" width="540" height="1169"><figcaption>Eskalavimo planai ir vaidmenys</figcaption></figure>
-      <figure><img src="img/etc-1.webp" alt="A komandos nario pirminės apžiūros sąrašas" loading="lazy" width="540" height="1169"><figcaption>A narys: pirminė apžiūra</figcaption></figure>
-      <figure><img src="img/etc-2.webp" alt="Masyvaus kraujavimo eskalavimo planas" loading="lazy" width="540" height="1169"><figcaption>Masyvaus kraujavimo planas</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section class="app" id="sim" data-a="sim" style="--c:var(--sim)">
-  <div class="wrap hd">
-    <div>
-      <div class="who"><img src="img/sim-icon.png" alt="" width="56" height="56"><h2>SIM</h2></div>
-      <span class="role">Treniruotėms</span>
-      <p>Paciento monitoriaus simuliatorius. Vienas telefonas tampa monitoriumi su EKG, SpO₂, AKS ir aliarmais, kitas – instruktoriaus pultu. Būklė keičiasi pagal tai, ką komanda daro: procedūras, vaistus, skysčius ir kraują.</p>
-      <ul>
-        <li>Scenarijai MEDEVAC ir Role 1, perdavimas iš vieno į kitą</li>
-        <li>Sužalojimai ir pagalba iki atvykimo – pagal CLS ir CMC ribas</li>
-        <li>Instruktoriaus įvykiai: atsilaisvinęs turniketas, nukritęs elektrodas, širdies sustojimas</li>
-      </ul>
-      <a class="open" href="https://sim.1040medkuopa.lt">Atidaryti SIM <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-      <span class="dom">sim.1040medkuopa.lt</span>
-    </div>
-    <div class="shots">
-      <figure><img src="img/sim-0.webp" alt="SIM pradžia: monitorius arba instruktorius" loading="lazy" width="540" height="1169"><figcaption>Telefonas – monitorius arba pultas</figcaption></figure>
-      <figure><img src="img/sim-1.webp" alt="Instruktoriaus vedlys: kas atlikta iki atvykimo" loading="lazy" width="540" height="1169"><figcaption>Vedlys: kas atlikta iki atvykimo</figcaption></figure>
-      <figure><img src="img/sim-2.webp" alt="Instruktoriaus pultas: procedūros pagal traumas" loading="lazy" width="540" height="1169"><figcaption>Pultas: procedūros pagal traumas</figcaption></figure>
-    </div>
-  </div>
-  <div class="wrap">
-    <figure class="mon"><img src="img/sim-mon.webp" alt="Monitoriaus vaizdas: EKG, pletizmograma, kvėpavimas, ŠSD 107, SpO₂ 78, AKS 84/56" loading="lazy" width="1200" height="555"><figcaption>Monitorius gulsčiame telefone: sužeistasis su turniketu ir atviru pneumotoraksu</figcaption></figure>
   </div>
 </section>
 
