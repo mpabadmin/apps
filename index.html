@@ -104,6 +104,21 @@ kbd{font:600 14px Barlow;padding:1px 7px;border:1px solid var(--line);border-bot
 .pulse > a{display:inline-block;margin-top:10px}
 .pulse .key{margin-top:10px;padding-top:10px;border-top:1px solid color-mix(in srgb,var(--sim) 40%,transparent)}
 .pulse .key b{font:600 17px Barlow}
+/* plačiau */
+.more{margin-top:18px;max-width:52ch;border:1px solid var(--line);border-radius:var(--r);background:var(--bg2)}
+.more summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;cursor:pointer;list-style:none;font:600 17px Barlow;color:var(--tx)}
+.more summary::-webkit-details-marker{display:none}
+.more summary svg{flex:none;width:20px;height:20px;transition:transform .2s ease}
+.more[open] summary svg{transform:rotate(180deg)}
+@media (prefers-reduced-motion: reduce){.more summary svg{transition:none}}
+.more summary:focus-visible{outline:2px solid var(--c);outline-offset:2px;border-radius:var(--r)}
+.more .mbody{padding:0 16px 16px;border-top:1px solid var(--line)}
+.more h3{font:700 21px/1.15 'Barlow Condensed';margin:16px 0 0;color:var(--tx)}
+.more p{margin:6px 0 0;max-width:none;color:var(--tx2)}
+.more ul{margin:8px 0 0;max-width:none}
+.more li{margin:7px 0}
+.more li b{color:var(--tx);font-weight:600}
+.more a{color:var(--tx);text-decoration-color:var(--c);text-underline-offset:3px}
 footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--tx2);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 </style>
@@ -143,6 +158,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
         <li>Sužalojimai ir pagalba iki atvykimo – pagal CLS ir CMC ribas</li>
         <li>Instruktoriaus įvykiai: atsilaisvinęs turniketas, nukritęs elektrodas, širdies sustojimas</li>
       </ul>
+      <details class="more"><summary>Plačiau: kam skirta ir ką galima nuveikti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mbody"><h3>Kam skirta</h3><p>Instruktoriams ir mokymų grupėms: šaulių gelbėtojų (CLS), kovos medikų (CMC) ir Role 1 komandų treniruotėms. Vietoje brangaus paciento monitoriaus – keli telefonai, planšetė ar kompiuteris su projektoriumi.</p><h3>Ką galima nuveikti</h3><ul><li><b>Monitorius</b> – EKG, pletizmograma, kvėpavimo kreivė, ŠSD, SpO₂, AKS (neinvazinis matavimas paspaudus) ir aliarmai su garsu. Kreivės turi natūralų „triukšmą“, todėl atrodo kaip tikros.</li><li><b>Instruktoriaus pultas</b> kitame telefone – prisijungiama kodu, viskas valdoma per atstumą.</li><li><b>Scenarijaus vedlys</b>: lytis, amžius, svoris, keli sužalojimai iškart, laikas nuo traumos ir kas jau atlikta iki atvykimo – pagal CLS ir CMC kompetencijos ribas.</li><li><b>Procedūros pagal traumas</b>: kraujavimo stabdymas, kvėpavimo takai (iki krikotirotomijos), pneumotoraksas, hipotermija; vaistai, skysčiai ir kraujas. Paciento būklė keičiasi pagal tai, ką komanda daro – ir ko nepadaro.</li><li><b>Instruktoriaus įvykiai</b>: atsilaisvinęs turniketas, nukritęs elektrodas, širdies sustojimas ir kt.</li><li><b>MEDEVAC ir Role 1</b> scenarijai, sužeistojo perdavimas iš vienos grandies kitai.</li></ul><h3>Kaip skaičiuojama</h3><p>Su internetu rodiklius skaičiuoja Pulse Physiology Engine mūsų serveryje: simuliacija prasideda iš karto, o tikslesnė eiga perskaičiuojama fone. Be interneto veikia supaprastintas modelis pačiame telefone.</p><h3>Svarbu</h3><p>SIM – mokymo priemonė, ne medicinos prietaisas. Pulse serverio rakto (žetono) kreipkitės į Moebius.</p></div></details>
       <a class="open" href="https://sim.1040medkuopa.lt">Atidaryti SIM <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       <span class="dom">sim.1040medkuopa.lt</span>
     </div>
@@ -164,17 +180,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <span class="role">Role 1 · traumos komanda</span>
       <p>Traumos komandos gidas Role 1 punktui pagal European Trauma Course. Kiekvienas komandos narys mato savo užduotis: A – kvėpavimo takai ir vadovavimas, B – kvėpavimas, C – kraujotaka.</p>
       <ul>
-        <li>Eskalavimo planai: masyvus kraujavimas, kvėpavimo takų obstrukcija, trauminis sustojimas</li>
+        <li>Escape planai: masyvus kraujavimas, kvėpavimo takų obstrukcija, trauminis sustojimas</li>
         <li>Pirminė ir antrinė apžiūra, gydymo tikslai</li>
         <li>Vaistai, transfuzija, nudegimai, GKS, 10 s triažas, MASCAL</li>
       </ul>
+      <details class="more"><summary>Plačiau: kam skirta ir ką galima nuveikti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mbody"><h3>Kam skirta</h3><p>Role 1 punkto traumos komandai – A, B ir C nariams bei komandos vadui – pagal European Trauma Course (ETC). Skirta ETC kursą baigusiems: tai atminties priemonė, padedanti dirbti vienodai ir nieko nepraleisti.</p><h3>Ką galima nuveikti</h3><ul><li><b>Escape planai</b> pradžioje: masyvus kraujavimas, kvėpavimo takų obstrukcija, trauminis širdies sustojimas – žingsniai ir kas už ką atsakingas.</li><li><b>Mano vaidmuo A, B, C</b>: pasiruošimas, ATMISTER perdavimas, pirminė apžiūra, planavimas ir antrinė apžiūra. Punktai žymimi kiekvienam sužeistajam atskirai, prie jų – ⓘ paaiškinimai ir nuorodos į įgūdžius.</li><li><b>Nukentėjusiojo kortelė (DD1380)</b> su kūno schema ir laikais; popierinę kortelę galima <b>nuskaityti telefono kamera</b>. Keli sužeistieji, perdavimas QR kodu ar tekstu.</li><li><b>Įrankiai</b>: 10 s triažas, MASCAL, 9-Line, SITREP, GKS skaičiuoklė, nudegimų plotas ir skysčiai, kraujo suderinamumas, transfuzija, vaistų skiedimas ir žymėjimas.</li><li><b>Vaistai</b> – dozės pagal sužeistojo svorį, įspėjimai.</li><li><b>Mokymasis</b>: 48 įgūdžiai su vaizdo įrašais, temos, 50 treniruočių situacijų ir dozių patikra.</li></ul><h3>Patogumai</h3><p>Veikia be interneto, raudonas naktinis režimas, pirštinių režimas su didesniais mygtukais, paieška viršuje.</p></div></details>
       <a class="open" href="https://etc.1040medkuopa.lt">Atidaryti ETC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       <span class="dom">etc.1040medkuopa.lt</span>
     </div>
     <div class="shots">
-      <figure><img src="img/etc-0.webp" alt="ETC gido pradžia: eskalavimo planai ir komandos vaidmenys A, B, C" loading="lazy" width="540" height="1169"><figcaption>Eskalavimo planai ir vaidmenys</figcaption></figure>
+      <figure><img src="img/etc-0.webp" alt="ETC gido pradžia: Escape planai, vaidmenys A, B, C ir įrankiai" loading="lazy" width="540" height="1169"><figcaption>Pradžia: Escape planai, vaidmenys, įrankiai</figcaption></figure>
       <figure><img src="img/etc-1.webp" alt="A komandos nario pirminės apžiūros sąrašas" loading="lazy" width="540" height="1169"><figcaption>A narys: pirminė apžiūra</figcaption></figure>
-      <figure><img src="img/etc-2.webp" alt="Masyvaus kraujavimo eskalavimo planas" loading="lazy" width="540" height="1169"><figcaption>Masyvaus kraujavimo planas</figcaption></figure>
+      <figure><img src="img/etc-2.webp" alt="Treniruotė: atsitiktinė situacija, dozių patikra, situacijos pagal temą" loading="lazy" width="540" height="1169"><figcaption>Treniruotė: situacijos ir dozės</figcaption></figure>
     </div>
   </div>
 </section>
@@ -187,16 +204,17 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <p>Atminties priemonė šauliams gelbėtojams ir kovos medikams pagal TCCC 2026 MARCH PAWS. Veda per fazes nuo apšaudymo iki evakuacijos ir padeda nieko nepamiršti, kai rankos užimtos.</p>
       <ul>
         <li>CUF, TFC ir TACEVAC kontroliniai sąrašai</li>
-        <li>Sužeistojo kortelė, MIST, 9-Line, SITREP, CONTREP, SALUTE</li>
+        <li>Nukentėjusiojo kortelė (DD1380) ir jos nuskaitymas, 9-Line, SITREP, CONTREP, SALUTE</li>
         <li>Vaistų dozės ir įgūdžiai su iliustracijomis ir vaizdo įrašais</li>
       </ul>
+      <details class="more"><summary>Plačiau: kam skirta ir ką galima nuveikti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mbody"><h3>Kam skirta</h3><p>Šauliams gelbėtojams (CLS) ir kovos medikams (CMC), baigusiems TCCC kursus – pagalbai lauke nuo apšaudymo iki evakuacijos. Pasirinkus savo lygį rodomi tik jūsų kompetencijos veiksmai ir vaistai.</p><h3>Ką galima nuveikti</h3><ul><li><b>Fazės</b> CUF, TFC (MARCH PAWS) ir TACEVAC – kontroliniai sąrašai su ⓘ paaiškinimais ir nuorodomis į įgūdžius.</li><li><b>Nukentėjusiojo kortelė (DD1380)</b> su kūno schema, turniketo ir TXA laikais bei priminimais; popierinę kortelę galima <b>nuskaityti kamera</b>. Keli sužeistieji, perdavimas QR kodu arba tekstu (LT / EN).</li><li><b>MEDEVAC įrankiai</b>: 10 s triažas, 9-Line, SITREP, CONTREP, SALUTE – užpildote telefone ir perskaitote per radiją.</li><li><b>Vaistai</b> pagal TCCC 2026 ir <b>įgūdžiai</b> su iliustracijomis bei vaizdo įrašais.</li><li><b>Treniruotė</b>: 50 karinių situacijų pagal fazes, dozių patikra kortelėmis, CLS vertinimo lapas instruktoriui.</li></ul><h3>Svarbu</h3><p>Gidas – tik pagalbinė priemonė ir neatstoja oficialių kursų. Rekomenduojame išklausyti <a href="https://mindaugas-grinevicius-s-school.teachable.com/p/tactical-combat-casualty-care-tccc" target="_blank" rel="noopener">taktinės medicinos (TCCC) kursą internetu</a>.</p></div></details>
       <a class="open" href="https://march.1040medkuopa.lt">Atidaryti March <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       <span class="dom">march.1040medkuopa.lt</span>
     </div>
     <div class="shots">
-      <figure><img src="img/march-0.webp" alt="March gido pradžia: fazės CUF, TFC, TACEVAC ir įrankiai" loading="lazy" width="540" height="1169"><figcaption>Fazės ir dažniausi įrankiai</figcaption></figure>
+      <figure><img src="img/march-0.webp" alt="March gido pradžia: lygis CLS / CMC, fazės CUF, TFC, TACEVAC ir MEDEVAC įrankiai" loading="lazy" width="540" height="1169"><figcaption>Pradžia: lygis, fazės, MEDEVAC</figcaption></figure>
       <figure><img src="img/march-1.webp" alt="TFC kontrolinis sąrašas: masyvus kraujavimas" loading="lazy" width="540" height="1169"><figcaption>TFC sąrašas: M – masyvus kraujavimas</figcaption></figure>
-      <figure><img src="img/march-2.webp" alt="9 eilučių MEDEVAC prašymo forma" loading="lazy" width="540" height="1169"><figcaption>9-Line prašymas</figcaption></figure>
+      <figure><img src="img/march-2.webp" alt="Treniruotė: situacijos pagal fazę ir dozių patikra" loading="lazy" width="540" height="1169"><figcaption>Treniruotė: situacijos ir dozės</figcaption></figure>
     </div>
   </div>
 </section>
@@ -210,15 +228,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
       <ul>
         <li>Rodiklių, skysčių balanso ir vaistų žurnalas su priminimais</li>
         <li>Valandinė ir paros priežiūra, ypatingos būklės</li>
-        <li>Telekonsultacija, MIST ir perdavimas QR kodu</li>
+        <li>Telekonsultacija, Nukentėjusiojo kortelė ir perdavimas QR kodu</li>
       </ul>
+      <details class="more"><summary>Plačiau: kam skirta ir ką galima nuveikti <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="mbody"><h3>Kam skirta</h3><p>Kovos medikams, paramedikams ir gydytojams, kai evakuacija vėluoja valandas ar paras (Prolonged Casualty Care). Lygis CLS / CMC / CPP parenka, kokie veiksmai ir vaistai rodomi.</p><h3>Ką galima nuveikti</h3><ul><li><b>Etapai</b> STAB, VAL, PAROS, YPAT ir EVAK – nuo perėmimo ir stabilizavimo iki paros priežiūros, ypatingų būklių ir pasiruošimo evakuacijai.</li><li><b>Stebėjimo lapas</b>: rodikliai su tendencijomis, skysčiai ir diurezė, vaistai ir veiksmai, priežiūros grafikas, turniketai.</li><li><b>Priminimai</b>: rodiklių matavimas, vaistų kartojimas, turniketų langai – telefonas suvibruoja.</li><li><b>Perdavimas</b>: telekonsultacijos tekstas (ATMISTER), Nukentėjusiojo kortelė (DD1380) ir jos nuskaitymas kamera, viso sužeistojo lapo perdavimas QR kodu.</li><li><b>Treniruotė</b>: 30 situacijų pagal etapus, dozių patikra, PCC įsivertinimo lapas.</li></ul><h3>Svarbu</h3><p>Gidas – tik pagalbinė priemonė: neatstoja oficialių kursų, vieneto SOP, telekonsultacijos ir gydytojo nurodymų.</p></div></details>
       <a class="open" href="https://pcc.1040medkuopa.lt">Atidaryti PCC <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
       <span class="dom">pcc.1040medkuopa.lt</span>
     </div>
     <div class="shots">
-      <figure><img src="img/pcc-0.webp" alt="PCC gido pradžia: STAB, VAL, PAROS, YPAT, EVAK" loading="lazy" width="540" height="1169"><figcaption>Priežiūros etapai</figcaption></figure>
+      <figure><img src="img/pcc-0.webp" alt="PCC gido pradžia: lygis CLS / CMC / CPP, etapai STAB, VAL, PAROS, YPAT, EVAK ir sužeistojo įrankiai" loading="lazy" width="540" height="1169"><figcaption>Pradžia: lygis ir priežiūros etapai</figcaption></figure>
       <figure><img src="img/pcc-1.webp" alt="Sužeistojo rodiklių matavimai ir grafikas" loading="lazy" width="540" height="1169"><figcaption>Rodiklių stebėjimas</figcaption></figure>
-      <figure><img src="img/pcc-2.webp" alt="Valandinės priežiūros kontrolinis sąrašas" loading="lazy" width="540" height="1169"><figcaption>Valandinė priežiūra</figcaption></figure>
+      <figure><img src="img/pcc-2.webp" alt="Valandinė priežiūra: skausmas ir sedacija, veiksmai pažymėti lygiais" loading="lazy" width="540" height="1169"><figcaption>Sąrašas su lygiais CLS / CMC / CPP</figcaption></figure>
     </div>
   </div>
 </section>
